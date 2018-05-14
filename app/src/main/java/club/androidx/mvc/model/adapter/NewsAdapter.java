@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FlowersAdapter extends RecyclerView.Adapter<FlowersAdapter.Holder>{
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.Holder>{
 
 
     @NonNull
