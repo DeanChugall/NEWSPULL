@@ -99,7 +99,7 @@ public class Articles {
     }
 
     public void setUrlToImage(String urlToImage) {
-        this.urlToImage = urlToImage;
+        this.urlToImage = (urlToImage==null ? "" : urlToImage);
     }
 
     public String getPublishedAt() {
