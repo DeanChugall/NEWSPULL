@@ -1,6 +1,8 @@
 package club.androidx.mvc.model.api;
 
+import club.androidx.mvc.MainActivity;
 import club.androidx.mvc.model.utilities.Constants;
+import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -12,6 +14,9 @@ public class RestApiManager {
 
     public NewsApi getNewsApi() {
         if (newsApi == null) {
+            int cacheSize = 10 * 1024 * 1024; // 10 MB
+            Cache cache = new Cache(MainActivity.mContext.getCacheDir(), cacheSize);
+
 
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
 

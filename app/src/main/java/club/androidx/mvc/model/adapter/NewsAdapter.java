@@ -47,8 +47,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.Holder> {
         Articles currentNews = mNews.get(position);
         holder.title.setText(currentNews.getTitle());
 
+        String path = currentNews.getUrlToImage();
+        Log.e("PATH", "PUTANJA: " + path);
+        if (path != null) {
 
             Picasso.get().load(currentNews.getUrlToImage()).into(holder.image);
+        }
 
 
 

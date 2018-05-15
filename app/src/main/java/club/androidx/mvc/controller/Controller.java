@@ -113,7 +113,7 @@ public class Controller {
 
 
 
-                                    Log.e(TAG, "URL TO IMAGES NULLLL: " + newsList.get(i).getUrlToImage());
+                                   // Log.e(TAG, "URL TO IMAGES NULLLL: " + newsList.get(i).getUrlToImage());
 
 
                                 //----------------------------------------------------------------------

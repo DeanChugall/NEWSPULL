@@ -1,6 +1,7 @@
 package club.androidx.mvc;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,13 @@ import club.androidx.mvc.model.pojo.Articles;
 public class MainActivity extends AppCompatActivity implements NewsCallbackListener{
 
 
+
+    public static Context mContext;
+
+    public MainActivity() {
+
+    }
+
     private RecyclerView recyclerView;
     private List<Articles> mArticlesList = new ArrayList<>();
     private NewsAdapter newsAdapter;
@@ -30,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NewsCallbackListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = getApplicationContext();
         setContentView(R.layout.activity_main);
         mController = new Controller(MainActivity.this);
         configViews();
@@ -55,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements NewsCallbackListe
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                VELICIna = 0;
                 mController.startFetching();
             }
         });
@@ -76,7 +86,8 @@ public class MainActivity extends AppCompatActivity implements NewsCallbackListe
        newsAdapter.addNews(newsList.get(VELICIna++));
 
 
-        Log.e("onFetchProgress: ", " ----------------- \n\n");
+
+       // Log.e("onFetchProgress: ", " ----------------- \n\n");
 
 
     }
@@ -89,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements NewsCallbackListe
 
     @Override
     public void onFetchFailed() {
-        Log.e("onFetchFailed: ", "RAAAAAAAAAADIIIIIIIIMMMMMM !!!!");
+        //Log.e("onFetchFailed: ", "RAAAAAAAAAADIIIIIIIIMMMMMM !!!!");
 
     }
 }
